@@ -1,0 +1,89 @@
+.element1 {
+  box-shadow: 0px 3px 25px -15px rgba(0, 0, 0, 0.15) inset;
+  color: #fff;
+  height: 500px;
+  width: 77px;
+  text-align: center;
+  background-image: linear-gradient(
+    180deg,
+    rgba(129, 121, 234, 1) 0%,
+    rgba(77, 5, 79, 1) 81%,
+    rgba(3, 0, 80, 1) 100%
+  );
+  float: left;
+
+  > a:first-of-type {
+    margin-top: 24px;
+    display: inline-block;
+  }
+
+  .button {
+    margin-top: 346px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    align-items: center;
+    width: 100%;
+    color: #d7caff;
+  }
+}
+
+.element2 {
+  display: inline-block;
+}
+
+.element3 {
+  display: block;
+}
+
+.widget {
+  box-shadow: 0 2px 20px 0 RGBA(0, 0, 0, 0.06);
+  border-radius: 16px;
+  background-color: #fff;
+
+  &-gradient {
+    color: #fff;
+    background: rgb(102, 61, 153);
+    background: linear-gradient(
+      270deg,
+      rgba(102, 61, 153, 1) 0%,
+      rgba(106, 70, 165, 1) 44%,
+      rgba(195, 131, 255, 1) 100%
+    );
+  }
+}
+
+.preventableCosts {
+  width: 840px;
+  height: 152px;
+}
+
+.accidentRiskReduction {
+  width: 840px;
+  height: 516px;
+}
+
+.speedCosts {
+  width: 404px;
+  height: 400px;
+}
+
+.idleCosts {
+  width: 404px;
+  height: 400px;
+}
+
+.highlights {
+  width: 408px;
+  height: 104px;
+}
+
+.drivingHours {
+  width: 408px;
+  height: 328px;
+}
+
+.drivingDistance {
+  width: 408px;
+  height: 328px;
+}

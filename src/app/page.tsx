@@ -1,95 +1,116 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import styles from "@app/page.module.scss";
+import Image from "next/image";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { Button } from "@components/button";
 
-export default function Home() {
+export default function Page() {
+  // TODO: Check if user is logged in, if not redirect to the /login page otherwise render this page
+  redirect("/login");
+
+  // TODO: Replace this mock with a user object from the https://randomuser.me/api/ API
+  // Note: See the docs here https://randomuser.me/documentation
+  const user = { name: { title: "Mrs", first: "Kavyashri", last: "Uchil" } };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div className={styles.element1}>
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            height={24}
+            width={24}
+            alt="Nexar logo"
+          />
+        </Link>
+        {/* TODO: On click logout a User and redirect to the /login page */}
+        <Button className={styles.button}>
+          <Image
+            src="/icons/logout.svg"
+            height={24}
+            width={24}
+            alt="Logout icon"
+          />
+          Logout
+        </Button>
+      </div>
+
+      <div className={styles.element2}>
+        {/* TODO: Create separate component which will receive User as a prop and render what it needs to */}
+        <h1>
+          Hi {user.name.title}. {user.name.first} {user.name.last}!
+        </h1>
+
+        <div className={styles.element3}>
+          <div style={{ float: "left" }}>
+            <div className={`${styles.widget} ${styles.widgetGradient}`}>
+              <div className={styles.preventableCosts}>
+                <h3>Preventable costs</h3>
+                <p>
+                  Preventable costs are calculated based on the driver behavior
+                  on the road.
+                </p>
+              </div>
+            </div>
+            <div className={styles.widget}>
+              <div className={styles.accidentRiskReduction}>
+                <h3>Accident risk reduction</h3>
+                <p>
+                  Accident risk reduction is calculated based on the driver
+                  behavior on the road.
+                </p>
+              </div>
+            </div>
+            <div className={styles.widget}>
+              <div className={styles.speedCosts}>
+                <h3>Preventable fuel costs.</h3>
+                <p>
+                  Preventable fuel costs are calculated based on the speed of
+                  the vehicle.
+                </p>
+              </div>
+            </div>
+            <div className={styles.widget}>
+              <div className={styles.idleCosts}>
+                <h3>Idle costs</h3>
+                <p>
+                  Idle costs are calculated based on the time the vehicle is
+                  idle.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div style={{ float: "right" }}>
+            <div className={styles.widget}>
+              <div className={styles.highlights}>
+                <h3>Highlights</h3>
+                <p>
+                  Highlights are calculated based on the driver behavior on the
+                  road.
+                </p>
+              </div>
+            </div>
+            <div className={styles.widget}>
+              <div className={styles.drivingHours}>
+                <h3>Driving hours</h3>
+                <p>
+                  Driving hours are calculated based on the the time the vehicle
+                  is moving.
+                </p>
+              </div>
+            </div>
+            <div className={styles.widget}>
+              <div className={styles.drivingDistance}>
+                <h3>Driving distance</h3>
+                <p>
+                  Driving distance is calculated based on the distance the
+                  vehicle has traveled.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
