@@ -13,11 +13,11 @@ Once logged in, the user can see random name and a few widgets. The user's name 
 
 - UI:
 
-  - [] Gradient background should be applied to the whole page
-  - [] Sign in form should be centered horizontally and vertically
-  - [] Logo should be at the top-left corner of the page
-  - [] Page should be responsive and look good on mobile devices (iPhone 5/6/7/8)
-  - [] Refactor HTML/CSS code
+  - [ ] Gradient background should be applied to the whole page
+  - [ ] Sign in form should be centered horizontally and vertically
+  - [ ] Logo should be at the top-left corner of the page
+  - [ ] Page should be responsive and look good on mobile devices (iPhone 5/6/7/8)
+  - [ ] Refactor HTML/CSS code
 
 - Functionality:
   - [] Use localStorage to store current user login state
